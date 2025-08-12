@@ -1,0 +1,179 @@
+/* Reset and base */
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  background: #111;
+  color: #eee;
+}
+a {
+  color: #00d1b2;
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+/* Header */
+header {
+  background: #222;
+  padding: 20px;
+  text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header h1 {
+  margin: 0 0 10px;
+  font-weight: 700;
+  font-size: 2rem;
+}
+nav a {
+  margin: 0 15px;
+  font-weight: 600;
+}
+
+/* Sections */
+section {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 0 20px;
+  border-bottom: 1px solid #333;
+}
+
+/* Fade in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Gallery styles */
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+.gallery-grid img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.gallery-grid img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 209, 178, 0.5);
+}
+
+/* Form styles */
+form {
+  display: flex;
+  flex-direction: column;
+}
+label {
+  margin: 10px 0 5px;
+  font-weight: 600;
+}
+input, textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 1rem;
+}
+input:focus, textarea:focus {
+  outline: 2px solid #00d1b2;
+}
+textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+button.btn {
+  margin-top: 15px;
+  background: #00d1b2;
+  border: none;
+  padding: 12px;
+  color: #111;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+button.btn:hover {
+  background: #00a68c;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 20px 10px;
+  background: #222;
+  margin-top: 40px;
+  font-size: 0.9rem;
+  color: #999;
+}
+/* Lightbox styles */
+.lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: fadeInLightbox 0.4s ease forwards;
+  z-index: 2000;
+}
+
+.lightbox-img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 10px;
+  box-shadow: 0 0 20px #00d1b2;
+  animation: zoomIn 0.4s ease forwards;
+}
+
+.close {
+  position: fixed;
+  top: 25px;
+  right: 40px;
+  font-size: 3rem;
+  color: #00d1b2;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.3s ease;
+}
+
+.close:hover {
+  color: #00a68c;
+}
+
+/* Animations */
+@keyframes fadeInLightbox {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
